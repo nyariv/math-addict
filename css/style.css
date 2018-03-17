@@ -1,0 +1,536 @@
+@font-face {
+    font-family: 'Varela Round';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/VarelaRound-Regular.ttf');
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    color: black;
+}
+
+* {
+    font-family: 'Varela Round', sans-serif;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-size: 2rem;
+}
+
+
+select {
+    font-size: 2rem;
+    padding: 0.25rem 0.5rem;
+    height: 1.5em;
+}
+
+input {
+    font-size: 2rem;
+    color: rgba(0,0,0,.5);
+    padding: 0.6rem;
+    box-sizing: border-box;
+}
+
+[type="password"], [type="email"] {
+    direction: ltr;
+}
+
+*:focus {
+    outline: none;
+}
+
+#app-container {
+	height: 100%;
+    margin: 0 auto;
+    background-color: #DCE2E1;
+    text-align: center;
+    box-shadow: #999 1rem 0 1rem 1.5rem;
+}
+
+#splash {
+    height: 100%;
+    width: 100%;
+    background-color: #41635A;
+}
+
+#splash h1 {
+    margin: 0;
+    padding: 8rem 0rem 2.5rem;
+    font-size: 4rem;
+    color: rgba(255,255,255, .9);
+    text-shadow: 0.25rem 0.25rem 0.25rem #111;
+}
+
+#splash .icon {
+    display: block;
+    width: 15rem;
+    margin: 5rem auto 4rem;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.cssload-loader {
+	width: 8rem;
+	height: 8rem;
+	line-height: 8rem;
+	position: relative;
+	box-sizing: border-box;
+	text-align: center;
+	z-index: 0;
+	text-transform: uppercase;
+    margin: 20rem auto;;
+}
+
+.cssload-loader:before,
+.cssload-loader:after {
+	opacity: 0;
+	box-sizing: border-box;
+	content: "\0020";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 4rem;
+	border: 0.3rem solid white;
+	box-shadow: 0 0 2rem white, inset 0 0 2rem white;
+}
+
+.cssload-loader:after {
+	z-index: 1;
+	animation: cssload-gogoloader 2.3s infinite 1.15s;
+}
+
+.cssload-loader:before {
+	z-index: 2;
+	animation: cssload-gogoloader 2.3s infinite;
+}
+
+@keyframes cssload-gogoloader {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+
+#header {
+    padding: 1rem;
+    background-color: #41635A;
+    position: relative;
+    height: 5rem;
+    box-shadow: #555 0.1rem 0 0.5rem 0.1rem;
+    color: rgba(255,255,255, .9);
+}
+
+#header select {
+    color: rgba(255,255,255, .9);
+    border-bottom-color: rgba(255,255,255, .9);
+}
+
+#header select option {
+    color: black;
+}
+
+#footer {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+#content {
+    padding: 2rem 2rem 1rem;
+}
+
+[data-equation] {
+    padding: 0.5rem;
+}
+
+.next {
+    height: 0;
+    overflow: hidden;
+}
+
+[data-text="mathType.description"] {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.answer {
+    padding: 0.5rem;
+}
+
+.answer input {
+    width: 50%;
+    height: 2.5rem;
+    border: 0.05rem solid #999;
+    padding: 0;
+    background-color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 1rem;
+}
+
+.next button {
+    border: 0.1rem solid #bbb;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.title-under {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.difficulty select {
+    font-size: 1rem;
+    padding: 0.1rem;
+    border: 0;
+    border-bottom: 0.05rem solid black;
+    background-color: transparent;
+}
+
+#header .score {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    line-height: 1.25rem;
+    margin-top: -0.75rem;
+}
+
+#header .score .total {
+    color: rgba(255,255,255, .9);
+    text-shadow: #555 0.1rem 0.1rem 0.2rem;
+}
+
+#header .score .additional {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    visibility: hidden;
+}
+
+#header .score .additional.show {
+    transition: 1s all;
+    visibility: visible;
+    bottom: -5.5rem;
+    opacity: 0;
+}
+
+.incorrect {
+    font-size: 1rem;
+    color: #E85E5E;
+    height: 1.25rem;
+}
+
+.number-pad {
+    text-align: center;
+    width: 20rem;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.number-pad .key {
+    width: 6rem;
+    line-height: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-weight: bold;
+    margin: 0.25rem;
+    box-shadow: #aaa 0.1rem 0.1rem 0.2rem 0.05rem;
+    transition: .1s all;
+    cursor: pointer;
+    background-size: 100%;
+}
+
+.number-pad .key.with-icon {
+    padding: 1rem;
+    line-height: 1em;
+}
+.number-pad .key.with-icon img {
+    display: block;
+    margin: 0 auto;
+    width: 2rem;
+    height: 2rem;
+}
+
+.number-pad .key.backspace {
+    /* background: white url('') no-repeat center center; */
+}
+
+.number-pad .key.enter {
+    /* background: white url('images/checkmark.svg') no-repeat center center; */
+}
+
+.number-pad .key.active {
+    background-color:#B9C6C3;
+    box-shadow: none; 
+    transform: translate(0.1rem, 0.1rem);
+}
+
+.menu-toggle {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 1rem;
+    margin-top: -1.25rem;
+    box-sizing: border-box;
+    width: 2.5rem;
+    padding: 0 0.3rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    background: white url('images/menu.svg') no-repeat center center;
+    background-size: 70%;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: #555 0.05rem 0.05rem 0.1rem 0.05rem;
+    transition: .1s all;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-toggle.active {
+    background-color:#B9C6C3;
+    box-shadow: none; 
+    transform: translate(0.05rem, 0.05rem);
+}
+
+#side-menu {
+    display: block;
+    width: 20rem;
+    background: #B9C6C3;
+}
+
+#side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#side-menu li {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: rgba(0,0,0,.5);
+    border-bottom: 0.05rem solid rgba(0,0,0, .5);
+    cursor: pointer;
+}
+
+
+#login h1 {
+    margin: 1rem;
+    font-size: 2.5rem;
+}
+
+#login .login-pane {
+    max-width: 25rem;
+    margin: 4rem auto 1rem;
+    text-align: left;
+    display: none;
+}
+
+[dir="rtl"] #login .login-pane {
+    text-align: right;
+}
+
+#login.email-input .login-pane.email {
+    display: block;
+}
+
+#login.phone-input .login-pane.code {
+    display: none;
+}
+
+#login.code-input .login-pane.phone-number {
+    display: none;
+}
+
+#login .login-pane label {
+    display: block;
+}
+
+#login .login-pane input {
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+}
+
+#login.email-input input {
+}
+
+button.action {
+    font-size: 2rem;
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1.25rem auto;
+    border: 0;
+    background-color: #B9C6C3;
+    border-radius: 0.5rem;
+    box-shadow: #999 0.25rem 0.25rem 0.5rem 0.1rem;
+    transition: .1s all;
+    cursor: pointer;
+}
+
+button.action.active {
+    box-shadow: none; 
+    transform: translate(0.25rem, 0.25rem);
+}
+
+.col-1-2 button.action {
+    width: 93%;
+    margin-top: 0;
+}
+
+[dir="ltr"] .col-1-2:first-child button.action {
+    margin-right:7%;
+}
+
+[dir="ltr"] .col-1-2:nth-child(2) button.action {
+    margin-left:7%;
+}
+
+[dir="rtl"] .col-1-2:first-child button.action {
+    margin-left: 7%;
+}
+
+[dir="rtl"] .col-1-2:nth-child(2) button.action {
+    margin-right:7%;
+}
+
+.well {
+    text-align: left;
+    padding: 2rem;
+    margin: 0rem auto 2rem;
+    box-shadow: #999 0.3rem 0.3rem 0.3rem 0rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+[dir="rtl"] .well {
+    text-align: right;
+}
+
+.well * {
+    font-size: 1.5rem;
+}
+
+.well select {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.well label {
+    display: block;
+}
+
+.well input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.error {
+    color: #E85E5E;
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+#competition .progress {
+    text-align: left;
+    font-size: 1.5rem;
+    color: #999;
+}
+
+#competition-finish .part {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#competition-finish .score {
+    font-weight: bold;
+    color: #E85E5E;
+    font-size: 5rem;
+}
+
+.highscores {
+    padding: 1rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr td {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.table .position {
+    width: 2rem;
+}
+
+.table tr:nth-child(2n) {
+    background-color: rgba(220, 226, 225, .5);
+}
+
+.table tr.self {
+    background-color: #F8EFEF;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    height: 0;
+    clear: both;
+}
+
+.col {
+    float: left;
+}
+
+[dir="rtl"] .col {
+    float: right;
+}
+
+.col-1-2 {
+    width: 50%;
+}

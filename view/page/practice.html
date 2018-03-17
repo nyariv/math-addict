@@ -1,0 +1,18 @@
+<div id="header">
+    <div data-text="mathType.label"></div>
+    <div class="score">
+        <div class="total" data-var="totalScore"></div>
+        <div class="additional" data-var="additionalScore" data-class="additionalScoreClass"></div>
+    </div>
+    <div class="difficulty title-under">
+        <span data-text="'Difficulty'"></span> <select data-input="mathDifficutly" data-select="difficultyOptions" data-change="updateEquation"></select>
+    </div>
+    <button class="menu-toggle header-left" data-trigger="openMenu"></button>
+</div>
+<form id="content" data-submit="next">
+    <div data-text="mathType.description"></div>
+    <div data-include="'view/component/problem.html'"></div>
+    <div data-include="'view/component/numpad.html'"></div>
+    <!-- <div class="next"><button type="submit" data-focus="submit">&#x2713;</button></div> -->
+</form>
+<div id="footer">Version <span data-var="version"></span></div>

@@ -1,0 +1,51 @@
+<div id="login" data-init="firebaseInit" data-class="login.step">
+    <div id="header">
+        <h1 data-text="'Login'"></h1>
+    </div>
+    <div class="login-pane phone-number">
+        <div class="input">
+            <label data-text="'Phone Number'"></label>
+            <input data-auto-focus data-input="login.phoneNumber" data-phone type="text" />
+        </div>
+        <div class="submit">
+            <button class="action" id="login-send" data-text="'Send'"></button>
+        </div>
+        <div class="submit">
+            <button class="action" id="login-anonymous" data-click="anonymousLogin" data-text="'Guest'"></button>
+        </div>
+    </div>
+    <div class="login-pane email">
+        <div class="well">
+            <div class="input">
+                <label data-text="'Email'"></label>
+                <input data-auto-focus data-input="login.email" type="email" />
+            </div>
+            <div class="input">
+                <label data-text="'Password'"></label>
+                <input data-input="login.password" type="password" />
+            </div>
+        </div>
+        <div class="submit">
+            <button class="action" data-click="emailLogin" data-text="'Login'"></button>
+        </div>
+        <div class="submit clearfix">
+                <div class="col col-1-2">
+                    <button class="action" data-click="emailRegister" data-text="'Create'"></button>
+                </div>
+                <div class="col col-1-2">
+                    <button class="action" id="login-anonymous" data-click="anonymousLogin" data-text="'Guest'"></button>
+                </div>
+        </div>
+    </div>
+    <div class="login-pane code">
+        <div class="input">
+            <label data-text="'Code'"></label>
+            <input data-input="login.code" type="text" />
+        </div>
+        <div class="submit">
+            <button class="action" data-click="loginSubmit" data-text="'Send'"></button>
+        </div>
+    </div>
+    <div class="error" data-text="login.error">
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div id="highscore">
+    <div id="header">
+        <div data-text="'High Score'"></div>
+        <div class="difficulty title-under">
+            <span data-text="'Difficulty'"></span> <select data-input="mathDifficutly" data-select="difficultyOptions" data-change="difficultyUpdate"></select>
+        </div>
+        <button class="menu-toggle header-left" data-trigger="openMenu"></button>
+    </div>
+    <div id="content">
+        <div class="well highscores">
+            <table class="table" data-repeat="highscore.results"></table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div id="header">
+    <div data-text="'Competition'"></div>
+    <button class="menu-toggle header-left" data-trigger="openMenu"></button>
+    <div class="score">
+        <div class="total" data-show="competitionStarted" data-var="competition.score"></div>
+        <div class="total" data-show="!competitionStarted" data-var="totalScore"></div>
+        <div class="additional" data-var="additionalScore" data-class="additionalScoreClass"></div>
+    </div>
+</div>
+<div id="content">
+    <div data-include="competitionPart"></div>
+</div>
